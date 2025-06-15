@@ -1060,4 +1060,56 @@ body.arabic {
 
 .lang-toggle:hover {
   background-color: rgba(0,0,0,0.08);
+}
+
+.lang-switch {
+  position: absolute;
+  right: 100px;
+  top: 22px;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.lang-switch input {
+  display: none;
+}
+
+.lang-switch .slider {
+  width: 42px;
+  height: 20px;
+  background: #ccc;
+  border-radius: 20px;
+  position: relative;
+  transition: background 0.3s;
+}
+
+.lang-switch .slider::before {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s;
+}
+
+.lang-switch input:checked + .slider {
+  background: #000;
+}
+
+.lang-switch input:checked + .slider::before {
+  transform: translateX(22px);
+}
+
+.lang-switch .label {
+  font-size: 12px;
+  margin: 0 6px;
+}
+
+.lang-switch .label.ar {
+  font-family: 'Cairo', sans-serif;
 } 

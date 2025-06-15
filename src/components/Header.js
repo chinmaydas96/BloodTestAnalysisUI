@@ -3,28 +3,36 @@ import React, { useState } from 'react';
 function Header({ isArabic, toggleLanguage }) {
   const [menuOpen, setMenuOpen] = useState(false);
   
+  const t = (en, ar) => (isArabic ? ar : en);
+
   return (
     <header className="header">
       <div className="logo-container">
         <h1 className="logo-text">bloodtest.AI</h1>
       </div>
+
+      {/* Language Switch */}
+      <div className="lang-switch" onClick={toggleLanguage}>
+        <input type="checkbox" checked={isArabic} readOnly />
+        <span className="slider" />
+        <span className="label en">EN</span>
+        <span className="label ar">ع</span>
+      </div>
+
       <button 
         className="menu-button" 
         onClick={() => setMenuOpen(!menuOpen)}
       >
-        Menu
+        {t('Menu','القائمة')}
       </button>
       
       {menuOpen && (
         <nav className="nav-menu">
-          <a href="#home" className="nav-link">Home</a>
-          <a href="#analysis" className="nav-link">Analysis</a>
-          <a href="#features" className="nav-link">Features</a>
-          <a href="#testimonials" className="nav-link">Testimonials</a>
-          <a href="#contact" className="nav-link">Contact</a>
-          <button className="lang-toggle" onClick={toggleLanguage}>
-            {isArabic ? 'EN' : 'ع'}
-          </button>
+          <a href="#home" className="nav-link">{t('Home','الرئيسية')}</a>
+          <a href="#analysis" className="nav-link">{t('Analysis','تحليل')}</a>
+          <a href="#features" className="nav-link">{t('Features','المزايا')}</a>
+          <a href="#testimonials" className="nav-link">{t('Testimonials','اراء')}</a>
+          <a href="#contact" className="nav-link">{t('Contact','الاتصال')}</a>
         </nav>
       )}
     </header>

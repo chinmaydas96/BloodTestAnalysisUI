@@ -23,11 +23,11 @@ function App() {
     <div className="App">
       <Header isArabic={isArabic} toggleLanguage={toggleLanguage} />
       <main>
-        <Hero />
-        <BloodTestAnalysis />
-        <Features />
-        <Pricing />
-        <Testimonials />
+        <Hero isArabic={isArabic} />
+        <BloodTestAnalysis isArabic={isArabic} />
+        <Features isArabic={isArabic} />
+        <Pricing isArabic={isArabic} />
+        <Testimonials isArabic={isArabic} />
       </main>
       <Footer />
     </div>
