@@ -356,14 +356,15 @@
   }
 }
 
-/* Blood Test Analysis */
+
 .blood-test-section {
-  padding: 80px 60px;
-  background: rgba(255, 255, 255, 0.7);
+  /* padding: 80px 60px; */
+  /* background: rgba(255, 255, 255, 0.7); */
   border-radius: 12px;
   margin: 40px 60px;
   backdrop-filter: blur(10px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); */
+  margin-top: 0px;
 }
 
 .blood-test-container {
