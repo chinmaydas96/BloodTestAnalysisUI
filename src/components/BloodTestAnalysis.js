@@ -71,7 +71,7 @@ function BloodTestAnalysis() {
           </div>
           <button 
             type="submit" 
-            className="cta-button" 
+            className="analysis-button" 
             disabled={!file || loading}
           >
             {loading ? 'Analyzing...' : 'Analyze Results'}

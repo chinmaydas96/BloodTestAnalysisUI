@@ -141,6 +141,31 @@
   background-color: #333333;
 }
 
+.analysis-button {
+  background-color: var(--token-53793f82-d2e9-4a07-9ab9-75c763d2e1e5);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.analysis-button:hover {
+  background-color: var(--token-2a873251-4c1e-466c-b5ea-a2b7fa93539e);
+}
+
+.analysis-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
 .features-section {
   padding: 80px 60px;
   display: flex;
@@ -334,9 +359,11 @@
 /* Blood Test Analysis */
 .blood-test-section {
   padding: 80px 60px;
-  background: linear-gradient(180deg, rgba(43, 101, 181, 0.04) 0%, rgba(43, 101, 181, 0.08) 100%);
+  background: rgba(255, 255, 255, 0.7);
   border-radius: 12px;
   margin: 40px 60px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 .blood-test-container {
@@ -533,4 +560,32 @@
   font-size: 16px;
   color: var(--token-7971df22-6c6f-4d4d-8825-e41e051e90ef);
   margin-left: 4px;
+}
+
+.nav-menu {
+  position: absolute;
+  top: 100%;
+  right: 60px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 100;
+}
+
+.nav-link {
+  color: var(--token-06b8906a-7808-4dfa-ac27-a436985f8eb1);
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: rgba(0, 0, 0, 0.05);
 } 
