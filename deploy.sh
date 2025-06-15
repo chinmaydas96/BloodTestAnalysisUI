@@ -1,8 +1,18 @@
 #!/bin/bash
 
+# Remove package-lock.json to ensure it gets regenerated
+if [ -f "package-lock.json" ]; then
+  echo "Removing package-lock.json to ensure clean install..."
+  rm package-lock.json
+fi
+
 # Check if node_modules exists, if not install dependencies
 if [ ! -d "node_modules" ]; then
   echo "Installing dependencies..."
+  npm install
+else
+  echo "Reinstalling dependencies to ensure consistency..."
+  rm -rf node_modules
   npm install
 fi
 
