@@ -1,0 +1,75 @@
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --token-fdda1afd-f6f4-4243-912c-50a95b7a4366: rgb(249, 250, 250);
+  --token-53793f82-d2e9-4a07-9ab9-75c763d2e1e5: rgb(242, 109, 15);
+  --token-caf4d247-f687-477a-bb56-3932dcf1ebe2: rgb(255, 159, 64);
+  --token-2a873251-4c1e-466c-b5ea-a2b7fa93539e: rgb(242, 116, 27);
+  --token-527cf162-1858-4c58-bbb2-da0fce81a29f: rgb(212, 212, 216);
+  --token-c7ff8f69-0ac2-4279-916a-0c20a96a4d86: rgb(0, 79, 128);
+  --token-7971df22-6c6f-4d4d-8825-e41e051e90ef: rgb(130, 130, 137);
+  --token-06b8906a-7808-4dfa-ac27-a436985f8eb1: rgb(12, 12, 13);
+  --token-32abb542-758d-4148-ab17-beace5424478: rgba(38, 38, 42, 1);
+  --token-86f8913c-1cff-48dc-8550-1278c6481212: rgb(48, 48, 54);
+  --token-a81a09d2-251b-41c8-b76f-02198ec1c3b5: #A1A1AA;
+  --token-083da567-1984-46de-8d11-75574a1e76b2: #636369;
+  --token-6d38cb2a-e330-43b1-901f-dadd94aa5691: #e2e2e2;
+  --token-89c5a060-7176-45cf-a909-26debee3c123: rgb(43, 99, 180);
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure {
+  margin: 0;
+}
+
+body,
+input,
+textarea,
+select,
+button {
+  font-size: 12px;
+  font-family: sans-serif;
+}
+
+@media(min-width: 1920px) {
+  .hidden-n91xig {
+    display: none !important
+  }
+}
+
+@media(min-width: 1280px) and (max-width: 1919px) {
+  .hidden-72rtr7 {
+    display: none !important
+  }
+}
+
+@media(min-width: 810px) and (max-width: 1279px) {
+  .hidden-x4b41r {
+    display: none !important
+  }
+}
+
+@media(max-width: 809px) {
+  .hidden-ne6mos {
+    display: none !important
+  }
+} 
