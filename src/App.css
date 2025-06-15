@@ -369,14 +369,35 @@
 .blood-test-container {
   max-width: 1000px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
 }
 
-.section-subtitle {
-  font-size: 18px;
-  color: var(--token-7971df22-6c6f-4d4d-8825-e41e051e90ef);
-  margin-top: 16px;
-  margin-bottom: 40px;
+.upload-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
   text-align: center;
+}
+
+.upload-text {
+  font-size: 20px;
+  line-height: 1.6;
+  color: var(--token-32abb542-758d-4148-ab17-beace5424478);
+  max-width: 700px;
+}
+
+.try-now-button {
+  margin-top: 10px;
+}
+
+.file-upload-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 0;
 }
 
 .upload-form {
@@ -384,7 +405,8 @@
   flex-direction: column;
   align-items: center;
   gap: 24px;
-  margin-bottom: 40px;
+  width: 100%;
+  max-width: 500px;
 }
 
 .file-upload {
@@ -397,13 +419,15 @@
   align-items: center;
   justify-content: center;
   padding: 16px;
-  border: 2px dashed var(--token-527cf162-1858-4c58-bbb2-da0fce81a29f);
+  border: 2px dashed rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   cursor: pointer;
   font-size: 16px;
   color: var(--token-7971df22-6c6f-4d4d-8825-e41e051e90ef);
   transition: all 0.3s ease;
   height: 60px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
 .file-label:hover {
@@ -413,6 +437,41 @@
 
 .file-input {
   display: none;
+}
+
+.analysis-button {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: var(--token-06b8906a-7808-4dfa-ac27-a436985f8eb1);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+}
+
+.analysis-button:hover {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+.analysis-button:disabled {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: rgba(0, 0, 0, 0.3);
+  cursor: not-allowed;
+}
+
+.section-subtitle {
+  font-size: 18px;
+  color: var(--token-7971df22-6c6f-4d4d-8825-e41e051e90ef);
+  margin-top: 16px;
+  margin-bottom: 40px;
+  text-align: center;
 }
 
 .results-container {
