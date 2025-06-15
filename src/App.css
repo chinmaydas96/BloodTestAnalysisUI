@@ -40,6 +40,7 @@ body.arabic {
   padding: 0 24px;
   position: relative;
   z-index: 10;
+  gap: 12px;
 }
 
 .logo {
@@ -1062,6 +1063,9 @@ body.arabic {
 .lang-switch {
   position: static;
   margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 body[dir="rtl"] .lang-switch {
@@ -1075,27 +1079,29 @@ body[dir="rtl"] .lang-switch {
 
 .lang-switch .slider {
   width: 42px;
-  height: 20px;
-  background: #ccc;
+  height: 22px;
+  background: #bcbcbc;
   border-radius: 20px;
   position: relative;
   transition: background 0.3s;
+  cursor: pointer;
 }
 
 .lang-switch .slider::before {
   content: '';
   position: absolute;
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
-  background: #fff;
+  background: #ffffff;
   top: 2px;
   left: 2px;
   transition: transform 0.3s;
+  box-shadow: 0 0 4px rgba(0,0,0,0.15);
 }
 
 .lang-switch input:checked + .slider {
-  background: #000;
+  background: #000000;
 }
 
 .lang-switch input:checked + .slider::before {
@@ -1105,6 +1111,7 @@ body[dir="rtl"] .lang-switch {
 .lang-switch .label {
   font-size: 12px;
   margin: 0 6px;
+  color: #000;
 }
 
 .lang-switch .label.ar {

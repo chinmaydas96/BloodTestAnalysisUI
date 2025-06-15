@@ -64,8 +64,9 @@ function Pricing({ isArabic=false }) {
             </div>
             
             <div className="pricing-card-actions">
-              <button className="get-started-button dark">Get Started</button>
-              <a href="#" className="learn-more-link">Learn More</a>
+              <button className="get-started-button dark">{t('Get Started','ابدأ الآن')}</button>
+              <a href="#" className="learn-more-link">{t('Learn More','تعرف أكثر')}</a>
+
             </div>
           </div>
           
@@ -74,7 +75,7 @@ function Pricing({ isArabic=false }) {
             <div className="pricing-card-badge">{t('Popular','الأكثر شيوعًا')}</div>
             <div className="pricing-card-header">
               <h3 className="pricing-plan-category">{t('For startups','للشركات الناشئة')}</h3>
-              <h2 className="pricing-plan-name">Pro</h2>
+              <h2 className="pricing-plan-name">{t('Pro','المؤسسة')}</h2>
               <p className="pricing-plan-description">
                 {t('Enhanced AI analysis with trend monitoring and personalized insights.',
                 'تحليل ذكي متقدم مع مراقبة الاتجاه وتوصيات مخصصة.')}
@@ -118,7 +119,7 @@ function Pricing({ isArabic=false }) {
           <div className="pricing-card">
             <div className="pricing-card-header">
               <h3 className="pricing-plan-category">{t('For big companies','للشركات الكبرى')}</h3>
-              <h2 className="pricing-plan-name">Enterprise</h2>
+              <h2 className="pricing-plan-name">{t('Enterprise','المؤسسة')}</h2>
               <p className="pricing-plan-description">
                 {t('Complete health analytics platform with advanced AI insights and reporting.',
                 'منصة كاملة لتحليلات الصحة مع رؤى متقدمة مدعومة بالذكاء الاصطناعي وتقارير مفصلة.')}
