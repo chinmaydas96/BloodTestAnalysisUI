@@ -11,7 +11,7 @@ function Hero() {
           transform: 'translate(-50%, -50%)',
           opacity: 0.5,
           willChange: 'transform',
-          animation: 'rotate1 25s linear infinite'
+          animation: 'rotate1 10s linear infinite'
         }}>
           <div className="conic" style={{
             width: '500px',
@@ -29,7 +29,7 @@ function Hero() {
           transform: 'translate(-50%, -50%)',
           opacity: 0.45,
           willChange: 'transform',
-          animation: 'rotate2 20s linear infinite'
+          animation: 'rotate2 10s linear infinite'
         }}>
           <div className="conic" style={{
             width: '450px',
@@ -47,7 +47,7 @@ function Hero() {
           transform: 'translate(-50%, -50%)',
           opacity: 0.4,
           willChange: 'transform',
-          animation: 'rotate3 15s linear infinite reverse'
+          animation: 'rotate3 8s linear infinite reverse'
         }}>
           <div className="conic" style={{
             width: '350px',
@@ -65,7 +65,7 @@ function Hero() {
           transform: 'translate(-50%, -50%)',
           opacity: 0.7,
           willChange: 'transform',
-          animation: 'rotate4 12s linear infinite'
+          animation: 'rotate4 5s linear infinite'
         }}>
           <div className="conic-inner" style={{
             width: '200px',
