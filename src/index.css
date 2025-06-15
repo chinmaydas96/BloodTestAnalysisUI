@@ -47,9 +47,10 @@ textarea,
 select,
 button {
   font-size: 12px;
-  font-family: sans-serif;
+  font-family: 'Instrument Sans', sans-serif;
 }
 
+/* Framer Breakpoint CSS */
 @media(min-width: 1920px) {
   .hidden-n91xig {
     display: none !important
@@ -72,4 +73,20 @@ button {
   .hidden-ne6mos {
     display: none !important
   }
+}
+
+/* Framer Badge Container */
+#__framer-badge-container {
+  position: fixed;
+  bottom: 0;
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  pointer-events: none;
+  z-index: 314159
+}
+
+.__framer-badge {
+  pointer-events: auto
 } 

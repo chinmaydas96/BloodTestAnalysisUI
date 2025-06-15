@@ -2,25 +2,25 @@ import React from 'react';
 
 function Footer() {
   return (
-    <footer className="footer">
-      <div className="footer-logo">
-        <img 
-          src="https://framerusercontent.com/images/YSdobC45mkoLCNuWcMVS8P7xoXg.png" 
-          alt="Valaam Logo" 
-          className="logo" 
-        />
+    <footer className="footer" id="contact">
+      <div className="footer-content">
+        <h2 className="footer-title">Contact Us</h2>
+        <p className="footer-description">
+          Have questions about BloodTestAI? We're here to help.
+        </p>
+        <div className="contact-info">
+          <p>Email: support@bloodtestai.com</p>
+          <p>Phone: +1 (555) 123-4567</p>
+        </div>
       </div>
       <div className="footer-links">
+        <a href="#home" className="footer-link">Home</a>
+        <a href="#analysis" className="footer-link">Analysis</a>
         <a href="#features" className="footer-link">Features</a>
         <a href="#testimonials" className="footer-link">Testimonials</a>
-        <a href="#pricing" className="footer-link">Pricing</a>
         <a href="#contact" className="footer-link">Contact</a>
-        <a href="#privacy" className="footer-link">Privacy Policy</a>
-        <a href="#terms" className="footer-link">Terms of Service</a>
       </div>
-      <div className="copyright">
-        &copy; {new Date().getFullYear()} Valaam. All rights reserved.
-      </div>
+      <p className="copyright">© {new Date().getFullYear()} BloodTestAI. All rights reserved.</p>
     </footer>
   );
 }

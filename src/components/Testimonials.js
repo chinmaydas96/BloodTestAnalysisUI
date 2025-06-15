@@ -1,30 +1,27 @@
 import React from 'react';
 
 function Testimonials() {
-  const testimonialsData = [
+  const testimonials = [
     {
-      id: 1,
-      text: "Valaam has transformed the way we approach data analysis. The AI-powered insights have helped us make better decisions and grow our business.",
-      author: "Sarah Johnson, CEO at TechForward"
+      text: "BloodTestAI helped me understand my lab results quickly. I was able to identify areas of concern and discuss them with my doctor.",
+      author: "Sarah M., Patient"
     },
     {
-      id: 2,
-      text: "The integration capabilities are outstanding. We were able to connect all our existing systems with minimal effort and start seeing results immediately.",
-      author: "Michael Chen, CTO at DataFlow"
+      text: "As a healthcare provider, I recommend BloodTestAI to my patients. It helps them understand their results and come prepared with informed questions.",
+      author: "Dr. James Wilson, MD"
     },
     {
-      id: 3,
-      text: "As a startup, we needed a solution that could scale with us. Valaam has been the perfect partner in our growth journey, providing powerful tools at an affordable price.",
-      author: "Emily Rodriguez, Founder at AIStartup"
+      text: "The trend analysis feature has been invaluable for monitoring my cholesterol levels over time. I can clearly see how my lifestyle changes are making a difference.",
+      author: "Michael T., Patient"
     }
   ];
 
   return (
     <section className="testimonials-section" id="testimonials">
-      <h2 className="section-title">What Our Clients Say</h2>
+      <h2 className="section-title">What Our Users Say</h2>
       <div className="testimonial-grid">
-        {testimonialsData.map(testimonial => (
-          <div key={testimonial.id} className="testimonial-card">
+        {testimonials.map((testimonial, index) => (
+          <div className="testimonial-card" key={index}>
             <p className="testimonial-text">"{testimonial.text}"</p>
             <p className="testimonial-author">{testimonial.author}</p>
           </div>

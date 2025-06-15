@@ -1,54 +1,46 @@
 import React from 'react';
 
 function Features() {
-  const featuresData = [
+  const features = [
     {
-      id: 1,
-      icon: "🤖",
-      title: "AI-Powered Analytics",
-      description: "Leverage advanced machine learning algorithms to gain insights from your data and make informed decisions."
+      title: 'Fast Analysis',
+      description: 'Get results in seconds, not days. Our AI processes your blood test data instantly.',
+      icon: '⚡'
     },
     {
-      id: 2,
-      icon: "📊",
-      title: "Real-time Monitoring",
-      description: "Track and analyze your business metrics in real-time with our powerful dashboard and visualization tools."
+      title: 'Accurate Results',
+      description: 'Our AI has been trained on millions of blood test results to provide highly accurate analyses.',
+      icon: '✓'
     },
     {
-      id: 3,
-      icon: "🔒",
-      title: "Enterprise Security",
-      description: "Keep your data safe with our enterprise-grade security features and compliance with industry standards."
+      title: 'Easy to Understand',
+      description: 'Complex medical terms translated into easy-to-understand language with actionable insights.',
+      icon: '📊'
     },
     {
-      id: 4,
-      icon: "⚡",
-      title: "High Performance",
-      description: "Experience lightning-fast processing and analysis with our optimized infrastructure."
+      title: 'Trend Analysis',
+      description: 'Track changes in your blood test results over time to monitor your health progress.',
+      icon: '📈'
     },
     {
-      id: 5,
-      icon: "🔄",
-      title: "Seamless Integration",
-      description: "Connect with your existing tools and platforms through our comprehensive API and integration options."
+      title: 'Secure & Private',
+      description: 'Your health data is encrypted and never shared with third parties.',
+      icon: '🔒'
     },
     {
-      id: 6,
-      icon: "📱",
-      title: "Mobile Accessibility",
-      description: "Access your data and insights on the go with our responsive mobile interface and native applications."
+      title: '24/7 Availability',
+      description: 'Access your blood test analysis anytime, anywhere, from any device.',
+      icon: '🌐'
     }
   ];
 
   return (
     <section className="features-section" id="features">
-      <h2 className="section-title">Powerful Features</h2>
+      <h2 className="section-title">Key Features</h2>
       <div className="features-grid">
-        {featuresData.map(feature => (
-          <div key={feature.id} className="feature-card">
-            <div className="feature-icon">
-              <span style={{ fontSize: '32px' }}>{feature.icon}</span>
-            </div>
+        {features.map((feature, index) => (
+          <div className="feature-card" key={index}>
+            <div className="feature-icon">{feature.icon}</div>
             <h3 className="feature-title">{feature.title}</h3>
             <p className="feature-description">{feature.description}</p>
           </div>
