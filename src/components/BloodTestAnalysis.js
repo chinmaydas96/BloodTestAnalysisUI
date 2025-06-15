@@ -90,15 +90,7 @@ function BloodTestAnalysis() {
 
   return (
     <section className="blood-test-section" id="analysis">
-      <div className="blood-test-container">
-        <div className="analysis-intro">
-          {!file && !results && (
-            <button className="try-now-button" onClick={() => document.getElementById('blood-test-file').click()}>
-              Try it Now
-            </button>
-          )}
-        </div>
-        
+      <div className="blood-test-container">        
         <div className="document-analyzer-container">
           <h3 className="analyzer-title">Document Analyzer</h3>
           <p className="analyzer-subtitle">Upload your blood test report for analysis</p>
