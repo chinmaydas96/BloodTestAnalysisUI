@@ -43,6 +43,10 @@ body.arabic {
   gap: 12px;
 }
 
+body[dir="rtl"] .header {
+  flex-direction: row-reverse;
+}
+
 .logo {
   height: 40px;
 }
@@ -69,16 +73,28 @@ body.arabic {
   padding: 8px 16px;
 }
 
+body[dir="rtl"] .menu-button {
+  font-family: 'Cairo', sans-serif;
+}
+
 .nav-links {
   display: flex;
   gap: 20px;
 }
 
 .nav-link {
-  color: var(--token-86f8913c-1cff-48dc-8550-1278c6481212);
+  color: var(--token-06b8906a-7808-4dfa-ac27-a436985f8eb1);
   text-decoration: none;
-  font-weight: 500;
   font-size: 16px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+body[dir="rtl"] .nav-link {
+  font-family: 'Cairo', sans-serif;
+  text-align: right;
 }
 
 .hero-section {
@@ -585,14 +601,11 @@ body.arabic {
   z-index: 100;
 }
 
-.nav-link {
-  color: var(--token-06b8906a-7808-4dfa-ac27-a436985f8eb1);
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: 500;
-  padding: 8px 16px;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
+body[dir="rtl"] .nav-menu {
+  right: auto;
+  left: 60px;
+  text-align: right;
+  min-width: 180px;
 }
 
 .nav-link:hover {
