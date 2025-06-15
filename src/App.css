@@ -911,17 +911,6 @@
   margin-bottom: 12px;
 }
 
-.feature-icon {
-  color: #4CAF50;
-  font-size: 18px;
-  margin-right: 12px;
-  flex-shrink: 0;
-}
-
-.featured .feature-icon {
-  color: #8AFF8A;
-}
-
 .feature-text {
   font-size: 15px;
 }
@@ -1016,4 +1005,32 @@
     width: 100%;
     max-width: 400px;
   }
+}
+
+/*--- Pricing card icon styles ---*/
+.pricing-card .feature-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #1a1a1a;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.pricing-card .feature-icon::before {
+  content: "\2713";
+  color: #fff;
+  font-size: 12px;
+  line-height: 1;
+}
+
+.pricing-card.featured .feature-icon {
+  background-color: #fff;
+}
+
+.pricing-card.featured .feature-icon::before {
+  color: #000;
 } 
