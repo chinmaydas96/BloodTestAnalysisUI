@@ -40,7 +40,7 @@ body.arabic {
   padding: 0 24px;
   position: relative;
   z-index: 10;
-  gap: 8px;
+  gap: 12px;
 }
 
 .logo {

@@ -11,13 +11,6 @@ function Header({ isArabic, toggleLanguage }) {
         <h1 className="logo-text">bloodtest.AI</h1>
       </div>
 
-      <button 
-        className="menu-button" 
-        onClick={() => setMenuOpen(!menuOpen)}
-      >
-        {t('Menu','القائمة')}
-      </button>
-
       {/* Language Switch */}
       <div className="lang-switch" onClick={toggleLanguage}>
         <input type="checkbox" checked={isArabic} readOnly />
@@ -26,6 +19,13 @@ function Header({ isArabic, toggleLanguage }) {
           <span className="lang ar">ع</span>
         </span>
       </div>
+
+      <button 
+        className="menu-button" 
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        {t('Menu','القائمة')}
+      </button>
       
       {menuOpen && (
         <nav className="nav-menu">
