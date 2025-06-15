@@ -111,7 +111,7 @@ function Hero() {
             width: 100%;
             height: 100%;
             background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%);
-            opacity: 0.1;
+            opacity: 0;
             transform: rotate(180deg);
           }
           
