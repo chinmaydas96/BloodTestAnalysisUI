@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ReactMarkdown from 'react-markdown';
 
 function BloodTestAnalysis() {
   const [results, setResults] = useState(null);
@@ -56,38 +57,6 @@ function BloodTestAnalysis() {
     }
   };
 
-  // Function to format analysis results for better display
-  const formatAnalysisResults = (text) => {
-    if (!text) return null;
-    
-    // Split the text into sections based on empty lines
-    const sections = text.split(/\n\n+/).filter(section => section.trim());
-    
-    return sections.map((section, index) => {
-      // Check if this is a section header
-      const lines = section.split('\n');
-      const isHeader = lines[0].endsWith(':');
-      
-      return (
-        <div key={index} className={`analysis-section ${isHeader ? 'section-header' : ''}`}>
-          {lines.map((line, lineIndex) => {
-            // Check if line is a bullet point
-            const isBullet = line.trim().startsWith('–') || line.trim().startsWith('-');
-            
-            return (
-              <div 
-                key={lineIndex} 
-                className={`analysis-line ${isBullet ? 'bullet-point' : ''} ${lineIndex === 0 && isHeader ? 'header-line' : ''}`}
-              >
-                {line}
-              </div>
-            );
-          })}
-        </div>
-      );
-    });
-  };
-
   return (
     <section className="blood-test-section" id="analysis">
       <div className="blood-test-container">        
@@ -129,8 +98,8 @@ function BloodTestAnalysis() {
           {results && (
             <div className="results-container">
               <h3 className="results-title">Analysis Results</h3>
-              <div className="formatted-results">
-                {formatAnalysisResults(results)}
+              <div className="formatted-results markdown-body">
+                <ReactMarkdown>{results}</ReactMarkdown>
               </div>
             </div>
           )}

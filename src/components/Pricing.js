@@ -44,19 +44,19 @@ function Pricing() {
               <h4 className="features-title">What's included</h4>
               <ul className="features-list">
                 <li className="feature-item">
-                  <span className="feature-icon">•</span>
+                  <span className="feature-icon" />
                   <span className="feature-text">All basic analysis features</span>
                 </li>
                 <li className="feature-item">
-                  <span className="feature-icon">•</span>
+                  <span className="feature-icon" />
                   <span className="feature-text">Up to 5 blood tests per month</span>
                 </li>
                 <li className="feature-item">
-                  <span className="feature-icon">•</span>
+                  <span className="feature-icon" />
                   <span className="feature-text">Standard report generation</span>
                 </li>
                 <li className="feature-item">
-                  <span className="feature-icon">•</span>
+                  <span className="feature-icon" />
                   <span className="feature-text">Email support</span>
                 </li>
               </ul>
@@ -88,19 +88,19 @@ function Pricing() {
               <h4 className="features-title">What's included</h4>
               <ul className="features-list">
                 <li className="feature-item">
-                  <span className="feature-icon">•</span>
+                  <span className="feature-icon" />
                   <span className="feature-text">All analytics features</span>
                 </li>
                 <li className="feature-item">
-                  <span className="feature-icon">•</span>
+                  <span className="feature-icon" />
                   <span className="feature-text">Up to 20 blood tests per month</span>
                 </li>
                 <li className="feature-item">
-                  <span className="feature-icon">•</span>
+                  <span className="feature-icon" />
                   <span className="feature-text">Priority support</span>
                 </li>
                 <li className="feature-item">
-                  <span className="feature-icon">•</span>
+                  <span className="feature-icon" />
                   <span className="feature-text">Health trend analysis</span>
                 </li>
               </ul>
@@ -131,19 +131,19 @@ function Pricing() {
               <h4 className="features-title">What's included</h4>
               <ul className="features-list">
                 <li className="feature-item">
-                  <span className="feature-icon">•</span>
+                  <span className="feature-icon" />
                   <span className="feature-text">Advanced AI analysis</span>
                 </li>
                 <li className="feature-item">
-                  <span className="feature-icon">•</span>
+                  <span className="feature-icon" />
                   <span className="feature-text">Unlimited blood tests</span>
                 </li>
                 <li className="feature-item">
-                  <span className="feature-icon">•</span>
+                  <span className="feature-icon" />
                   <span className="feature-text">24/7 dedicated support</span>
                 </li>
                 <li className="feature-item">
-                  <span className="feature-icon">•</span>
+                  <span className="feature-icon" />
                   <span className="feature-text">Custom integration options</span>
                 </li>
               </ul>

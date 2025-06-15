@@ -1024,7 +1024,10 @@
   content: "\2713";
   color: #fff;
   font-size: 12px;
-  line-height: 1;
+  display: block;
+  width: 100%;
+  text-align: center;
+  line-height: 20px;
 }
 
 .pricing-card.featured .feature-icon {
