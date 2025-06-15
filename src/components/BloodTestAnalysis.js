@@ -56,49 +56,94 @@ function BloodTestAnalysis() {
     }
   };
 
+  // Function to format analysis results for better display
+  const formatAnalysisResults = (text) => {
+    if (!text) return null;
+    
+    // Split the text into sections based on empty lines
+    const sections = text.split(/\n\n+/).filter(section => section.trim());
+    
+    return sections.map((section, index) => {
+      // Check if this is a section header
+      const lines = section.split('\n');
+      const isHeader = lines[0].endsWith(':');
+      
+      return (
+        <div key={index} className={`analysis-section ${isHeader ? 'section-header' : ''}`}>
+          {lines.map((line, lineIndex) => {
+            // Check if line is a bullet point
+            const isBullet = line.trim().startsWith('–') || line.trim().startsWith('-');
+            
+            return (
+              <div 
+                key={lineIndex} 
+                className={`analysis-line ${isBullet ? 'bullet-point' : ''} ${lineIndex === 0 && isHeader ? 'header-line' : ''}`}
+              >
+                {line}
+              </div>
+            );
+          })}
+        </div>
+      );
+    });
+  };
+
   return (
     <section className="blood-test-section" id="analysis">
       <div className="blood-test-container">
-        <h2>Document Analyzer</h2>
-        <p>Upload your blood test report for analysis</p>
+        <div className="analysis-intro">
+          <h2>Upload your blood test results and get instant, accurate analysis powered by our advanced AI technology. Understand your health metrics with personalized insights and recommendations.</h2>
+          {!file && !results && (
+            <button className="try-now-button" onClick={() => document.getElementById('blood-test-file').click()}>
+              Try it Now
+            </button>
+          )}
+        </div>
         
-        <form onSubmit={handleSubmit} className="upload-form">
-          <div className="file-upload">
-            <label htmlFor="blood-test-file" className="file-label">
-              {file ? file.name : 'Choose a file'}
-              <input 
-                type="file" 
-                id="blood-test-file" 
-                accept=".pdf,.jpg,.jpeg,.png" 
-                onChange={handleFileChange}
-                className="file-input" 
-              />
-            </label>
-          </div>
-          <button 
-            type="submit" 
-            className="analysis-button" 
-            disabled={!file || loading}
-          >
-            {loading ? 'Processing...' : 'Process Document'}
-          </button>
-        </form>
+        <div className="document-analyzer-container">
+          <h3 className="analyzer-title">Document Analyzer</h3>
+          <p className="analyzer-subtitle">Upload your blood test report for analysis</p>
+          
+          <form onSubmit={handleSubmit} className="upload-form">
+            <div className="file-upload">
+              <label htmlFor="blood-test-file" className="file-label">
+                {file ? file.name : 'Choose a file'}
+                <input 
+                  type="file" 
+                  id="blood-test-file" 
+                  accept=".pdf,.jpg,.jpeg,.png" 
+                  onChange={handleFileChange}
+                  className="file-input" 
+                />
+              </label>
+            </div>
+            <button 
+              type="submit" 
+              className="analysis-button" 
+              disabled={!file || loading}
+            >
+              {loading ? 'Processing...' : 'Process Document'}
+            </button>
+          </form>
 
-        {loading && <div className="loading-indicator">⏳ Processing...</div>}
+          {loading && <div className="loading-indicator">⏳ Processing...</div>}
 
-        {error && (
-          <div className="error-message">
-            <h3>Error</h3>
-            <p>{error}</p>
-          </div>
-        )}
+          {error && (
+            <div className="error-message">
+              <h3>Error</h3>
+              <p>{error}</p>
+            </div>
+          )}
 
-        {results && (
-          <div className="results-container">
-            <h3 className="results-title">Analysis Results</h3>
-            <pre className="results-content">{results}</pre>
-          </div>
-        )}
+          {results && (
+            <div className="results-container">
+              <h3 className="results-title">Analysis Results</h3>
+              <div className="formatted-results">
+                {formatAnalysisResults(results)}
+              </div>
+            </div>
+          )}
+        </div>
       </div>
     </section>
   );
