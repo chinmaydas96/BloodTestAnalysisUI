@@ -9,11 +9,11 @@ fi
 # Check if node_modules exists, if not install dependencies
 if [ ! -d "node_modules" ]; then
   echo "Installing dependencies..."
-  npm install
+  npm install --legacy-peer-deps
 else
   echo "Reinstalling dependencies to ensure consistency..."
   rm -rf node_modules
-  npm install
+  npm install --legacy-peer-deps
 fi
 
 # Build the React app
