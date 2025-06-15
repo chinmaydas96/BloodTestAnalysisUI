@@ -9,17 +9,17 @@ function Hero() {
           top: '50%',
           left: '50%',
           transform: 'translate(-50%, -50%)',
-          opacity: 0.4,
+          opacity: 0.5,
           willChange: 'transform',
           animation: 'rotate1 25s linear infinite'
         }}>
           <div className="conic" style={{
-            width: '600px',
-            height: '600px',
-            background: 'conic-gradient(from 0deg, rgba(255, 0, 255, 0.4), rgba(132, 0, 255, 0.4), rgba(0, 174, 255, 0.4), rgba(0, 255, 234, 0.4), rgba(255, 0, 255, 0.4))',
+            width: '500px',
+            height: '500px',
+            background: 'conic-gradient(from 0deg, rgba(255, 0, 255, 0.5), rgba(132, 0, 255, 0.5), rgba(0, 174, 255, 0.5), rgba(0, 255, 234, 0.5), rgba(255, 0, 255, 0.5))',
             borderRadius: '50%',
             transform: 'scale(1)',
-            filter: 'blur(60px)'
+            filter: 'blur(50px)'
           }}></div>
         </div>
         <div className="blur-rotate" style={{
@@ -27,17 +27,17 @@ function Hero() {
           top: '50%',
           left: '50%',
           transform: 'translate(-50%, -50%)',
-          opacity: 0.35,
+          opacity: 0.45,
           willChange: 'transform',
           animation: 'rotate2 20s linear infinite'
         }}>
           <div className="conic" style={{
-            width: '500px',
-            height: '500px',
-            background: 'conic-gradient(from 120deg, rgba(255, 0, 128, 0.4), rgba(128, 0, 255, 0.4), rgba(0, 128, 255, 0.4), rgba(0, 255, 128, 0.4), rgba(255, 0, 128, 0.4))',
+            width: '450px',
+            height: '450px',
+            background: 'conic-gradient(from 120deg, rgba(255, 0, 128, 0.5), rgba(128, 0, 255, 0.5), rgba(0, 128, 255, 0.5), rgba(0, 255, 128, 0.5), rgba(255, 0, 128, 0.5))',
             borderRadius: '50%',
             transform: 'scale(0.9)',
-            filter: 'blur(55px)'
+            filter: 'blur(45px)'
           }}></div>
         </div>
         <div className="blur-rotate-blend" style={{
@@ -45,17 +45,34 @@ function Hero() {
           top: '50%',
           left: '50%',
           transform: 'translate(-50%, -50%)',
-          opacity: 0.3,
+          opacity: 0.4,
           willChange: 'transform',
-          animation: 'rotate3 30s linear infinite reverse'
+          animation: 'rotate3 15s linear infinite reverse'
         }}>
           <div className="conic" style={{
-            width: '650px',
-            height: '650px',
-            background: 'conic-gradient(from 240deg, rgba(72, 0, 255, 0.4), rgba(0, 183, 255, 0.4), rgba(0, 255, 183, 0.4), rgba(72, 0, 255, 0.4))',
+            width: '350px',
+            height: '350px',
+            background: 'conic-gradient(from 240deg, rgba(72, 0, 255, 0.6), rgba(0, 183, 255, 0.6), rgba(255, 105, 180, 0.6), rgba(72, 0, 255, 0.6))',
             borderRadius: '50%',
             transform: 'scale(0.8)',
-            filter: 'blur(65px)'
+            filter: 'blur(35px)'
+          }}></div>
+        </div>
+        <div className="inner-circle" style={{
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          opacity: 0.7,
+          willChange: 'transform',
+          animation: 'rotate4 12s linear infinite'
+        }}>
+          <div className="conic-inner" style={{
+            width: '200px',
+            height: '200px',
+            background: 'conic-gradient(from 180deg, rgba(0, 191, 255, 0.7), rgba(138, 43, 226, 0.7), rgba(255, 20, 147, 0.7), rgba(0, 191, 255, 0.7))',
+            borderRadius: '50%',
+            filter: 'blur(25px)'
           }}></div>
         </div>
       </div>
@@ -98,6 +115,14 @@ function Hero() {
             }
           }
           @keyframes rotate3 {
+            0% {
+              transform: translate(-50%, -50%) rotate(0deg);
+            }
+            100% {
+              transform: translate(-50%, -50%) rotate(360deg);
+            }
+          }
+          @keyframes rotate4 {
             0% {
               transform: translate(-50%, -50%) rotate(0deg);
             }
