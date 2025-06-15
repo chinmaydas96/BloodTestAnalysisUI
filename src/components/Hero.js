@@ -3,12 +3,6 @@ import React from 'react';
 function Hero() {
   return (
     <section className="hero-section" id="home">
-      <div className="whats-new-banner">
-        <span className="whats-new-dot">•</span>
-        <span className="whats-new-text">What's new</span>
-        <span className="whats-new-feature">Streamline your ML workflow with v2.0</span>
-        <span className="whats-new-arrow">›</span>
-      </div>
       <h1 className="hero-title">
         Algorithm training infrastructure
       </h1>
