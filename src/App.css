@@ -1078,7 +1078,7 @@ body[dir="rtl"] .lang-switch {
 }
 
 .lang-switch .slider {
-  width: 42px;
+  width: 50px;
   height: 22px;
   background: #bcbcbc;
   border-radius: 20px;
@@ -1105,7 +1105,7 @@ body[dir="rtl"] .lang-switch {
 }
 
 .lang-switch input:checked + .slider::before {
-  transform: translateX(22px);
+  transform: translateX(28px);
 }
 
 .lang-switch .label {
@@ -1124,10 +1124,12 @@ body[dir="rtl"] .lang-switch {
   transform: translateY(-50%);
   font-size: 11px;
   font-weight: 600;
+  width: 20px;
+  text-align: center;
 }
 
-.lang-switch .en { left: 6px; }
-.lang-switch .ar { right: 6px; font-family: 'Cairo',sans-serif; }
+.lang-switch .en { left: 4px; }
+.lang-switch .ar { right: 4px; font-family: 'Cairo',sans-serif; }
 
 /* color visibility */
 .lang-switch input:checked + .slider .ar { color:#fff; }
