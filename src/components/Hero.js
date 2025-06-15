@@ -1,6 +1,8 @@
 import React from 'react';
 
-function Hero() {
+function Hero({ isArabic = false }) {
+  const t = (en, ar) => isArabic ? ar : en;
+
   return (
     <section className="hero-section" id="home">
       <div className="background-animation">
@@ -158,13 +160,14 @@ function Hero() {
       </style>
       <div style={{ position: 'relative', zIndex: 1 }}>
         <h1 className="hero-title">
-          Blood Test Analysis
+          {t('Blood Test Analysis', 'تحليل فحوصات الدم')}
         </h1>
         <p className="hero-subtitle">
-          Upload your blood test results and get instant, accurate analysis powered by our advanced AI technology. Understand your health metrics with personalized insights and recommendations.
+          {t('Upload your blood test results and get instant, accurate analysis powered by our advanced AI technology. Understand your health metrics with personalized insights and recommendations.',
+          'قم بتحميل نتائج فحوصات الدم الخاصة بك واحصل على تحليل فوري ودقيق مدعوم بتقنية الذكاء الاصطناعي المتقدمة لدينا. فهم مقاييس صحتك مع رؤى وتوصيات مخصصة.')}
         </p>
         <div className="hero-buttons">
-          <a href="#analysis" className="cta-button">Try it Now</a>
+          <a href="#analysis" className="cta-button">{t('Try it Now', 'جرّبه الآن')}</a>
         </div>
       </div>
     </section>

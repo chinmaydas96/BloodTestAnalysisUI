@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 
-function BloodTestAnalysis() {
+function BloodTestAnalysis({ isArabic }) {
   const [results, setResults] = useState(null);
   const [loading, setLoading] = useState(false);
   const [file, setFile] = useState(null);
   const [error, setError] = useState(null);
+
+  const t = (en, ar) => isArabic ? ar : en;
 
   // Hardcoded API values
   const API_URL = "https://giqddf736l.execute-api.us-east-1.amazonaws.com/prod/process";
@@ -61,13 +63,13 @@ function BloodTestAnalysis() {
     <section className="blood-test-section" id="analysis">
       <div className="blood-test-container">        
         <div className="document-analyzer-container">
-          <h3 className="analyzer-title">Document Analyzer</h3>
-          <p className="analyzer-subtitle">Upload your blood test report for analysis</p>
+          <h3 className="analyzer-title">{t('Document Analyzer','محلل المستندات')}</h3>
+          <p className="analyzer-subtitle">{t('Upload your blood test report for analysis','قم بتحميل تقرير فحص الدم للتحليل')}</p>
           
           <form onSubmit={handleSubmit} className="upload-form">
             <div className="file-upload">
               <label htmlFor="blood-test-file" className="file-label">
-                {file ? file.name : 'Choose a file'}
+                {file ? file.name : t('Choose a file','اختر ملفًا')}
                 <input 
                   type="file" 
                   id="blood-test-file" 
@@ -82,7 +84,7 @@ function BloodTestAnalysis() {
               className="analysis-button" 
               disabled={!file || loading}
             >
-              {loading ? 'Processing...' : 'Process Document'}
+              {loading ? t('Processing...','جارٍ المعالجة...') : t('Process Document','معالجة المستند')}
             </button>
           </form>
 
@@ -97,7 +99,7 @@ function BloodTestAnalysis() {
 
           {results && (
             <div className="results-container">
-              <h3 className="results-title">Analysis Results</h3>
+              <h3 className="results-title">{t('Analysis Results','نتائج التحليل')}</h3>
               <div className="formatted-results markdown-body">
                 <ReactMarkdown>{results}</ReactMarkdown>
               </div>

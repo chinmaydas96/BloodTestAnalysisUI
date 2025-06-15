@@ -29,7 +29,7 @@ function App() {
         <Pricing isArabic={isArabic} />
         <Testimonials isArabic={isArabic} />
       </main>
-      <Footer />
+      <Footer isArabic={isArabic} />
     </div>
   );
 }

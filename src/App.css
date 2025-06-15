@@ -33,16 +33,13 @@ body.arabic {
 
 .header {
   background-color: transparent;
-  min-height: 80px;
+  min-height: 60px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 60px;
+  padding: 0 24px;
   position: relative;
   z-index: 10;
-  max-width: 1400px;
-  margin: 0 auto;
-  width: 100%;
 }
 
 .logo {
@@ -50,7 +47,7 @@ body.arabic {
 }
 
 .logo-text {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 700;
   color: #000000;
 }
@@ -1063,13 +1060,13 @@ body.arabic {
 }
 
 .lang-switch {
-  position: absolute;
-  right: 100px;
-  top: 22px;
-  display: inline-flex;
-  align-items: center;
-  cursor: pointer;
-  user-select: none;
+  position: static;
+  margin-left: auto;
+}
+
+body[dir="rtl"] .lang-switch {
+  margin-right: auto;
+  margin-left: 0;
 }
 
 .lang-switch input {
