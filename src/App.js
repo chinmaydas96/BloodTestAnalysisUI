@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -9,9 +9,19 @@ import Testimonials from './components/Testimonials';
 import Footer from './components/Footer';
 
 function App() {
+  const [isArabic, setIsArabic] = useState(false);
+
+  const toggleLanguage = () => setIsArabic(prev => !prev);
+
+  // Apply dir and body class based on language
+  useEffect(() => {
+    document.documentElement.dir = isArabic ? 'rtl' : 'ltr';
+    document.body.classList.toggle('arabic', isArabic);
+  }, [isArabic]);
+
   return (
     <div className="App">
-      <Header />
+      <Header isArabic={isArabic} toggleLanguage={toggleLanguage} />
       <main>
         <Hero />
         <BloodTestAnalysis />

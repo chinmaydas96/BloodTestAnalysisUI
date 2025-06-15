@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function Header() {
+function Header({ isArabic, toggleLanguage }) {
   const [menuOpen, setMenuOpen] = useState(false);
   
   return (
@@ -22,6 +22,9 @@ function Header() {
           <a href="#features" className="nav-link">Features</a>
           <a href="#testimonials" className="nav-link">Testimonials</a>
           <a href="#contact" className="nav-link">Contact</a>
+          <button className="lang-toggle" onClick={toggleLanguage}>
+            {isArabic ? 'EN' : 'ع'}
+          </button>
         </nav>
       )}
     </header>
