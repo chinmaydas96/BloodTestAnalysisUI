@@ -6,7 +6,7 @@ function Footer() {
       <div className="footer-content">
         <h2 className="footer-title">Contact Us</h2>
         <p className="footer-description">
-          Have questions about BloodTest.ai? We're here to help.
+          Have questions about bloodtest.ai? We're here to help.
         </p>
         <div className="contact-info">
           <p>Email: support@bloodtest.ai</p>
@@ -20,7 +20,7 @@ function Footer() {
         <a href="#testimonials" className="footer-link">Testimonials</a>
         <a href="#contact" className="footer-link">Contact</a>
       </div>
-      <p className="copyright">© {new Date().getFullYear()} BloodTest.ai. All rights reserved.</p>
+      <p className="copyright">© {new Date().getFullYear()} bloodtest.ai. All rights reserved.</p>
     </footer>
   );
 }

@@ -6,7 +6,7 @@ function Header() {
   return (
     <header className="header">
       <div className="logo-container">
-        <h1 className="logo-text">BloodTest.AI</h1>
+        <h1 className="logo-text">bloodtest.AI</h1>
       </div>
       <button 
         className="menu-button" 
