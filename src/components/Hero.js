@@ -9,18 +9,17 @@ function Hero() {
           top: '50%',
           left: '50%',
           transform: 'translate(-50%, -50%)',
-          opacity: 1,
+          opacity: 0.8,
           willChange: 'transform',
-          animation: 'rotate1 8s linear infinite'
+          animation: 'rotate1 25s linear infinite'
         }}>
           <div className="conic" style={{
-            width: '500px',
-            height: '500px',
-            background: 'conic-gradient(from 0deg, #007bff, #00bfff, #87ceeb, #007bff)',
+            width: '800px',
+            height: '800px',
+            background: 'conic-gradient(from 0deg, rgba(255, 0, 255, 0.7), rgba(132, 0, 255, 0.7), rgba(0, 174, 255, 0.7), rgba(0, 255, 234, 0.7), rgba(255, 0, 255, 0.7))',
             borderRadius: '50%',
-            transform: 'scale(0.819533)',
-            opacity: 0.8,
-            filter: 'blur(40px)'
+            transform: 'scale(1.2)',
+            filter: 'blur(80px)'
           }}></div>
         </div>
         <div className="blur-rotate" style={{
@@ -28,18 +27,17 @@ function Hero() {
           top: '50%',
           left: '50%',
           transform: 'translate(-50%, -50%)',
-          opacity: 1,
+          opacity: 0.7,
           willChange: 'transform',
-          animation: 'rotate2 10s linear infinite reverse'
+          animation: 'rotate2 20s linear infinite'
         }}>
           <div className="conic" style={{
-            width: '500px',
-            height: '500px',
-            background: 'conic-gradient(from 120deg, #007bff, #00bfff, #87ceeb, #007bff)',
+            width: '700px',
+            height: '700px',
+            background: 'conic-gradient(from 120deg, rgba(255, 0, 128, 0.7), rgba(128, 0, 255, 0.7), rgba(0, 128, 255, 0.7), rgba(0, 255, 128, 0.7), rgba(255, 0, 128, 0.7))',
             borderRadius: '50%',
-            transform: 'scale(0.819467)',
-            opacity: 1,
-            filter: 'blur(40px)'
+            transform: 'scale(1.1)',
+            filter: 'blur(70px)'
           }}></div>
         </div>
         <div className="blur-rotate-blend" style={{
@@ -47,18 +45,17 @@ function Hero() {
           top: '50%',
           left: '50%',
           transform: 'translate(-50%, -50%)',
-          opacity: 1,
+          opacity: 0.6,
           willChange: 'transform',
-          animation: 'rotate3 12s linear infinite'
+          animation: 'rotate3 30s linear infinite reverse'
         }}>
           <div className="conic" style={{
-            width: '500px',
-            height: '500px',
-            background: 'conic-gradient(from 240deg, #007bff, #00bfff, #87ceeb, #007bff)',
+            width: '900px',
+            height: '900px',
+            background: 'conic-gradient(from 240deg, rgba(72, 0, 255, 0.7), rgba(0, 183, 255, 0.7), rgba(0, 255, 183, 0.7), rgba(72, 0, 255, 0.7))',
             borderRadius: '50%',
-            transform: 'scale(0.8194)',
-            opacity: 1,
-            filter: 'blur(40px)'
+            transform: 'scale(1)',
+            filter: 'blur(90px)'
           }}></div>
         </div>
       </div>
@@ -80,6 +77,7 @@ function Hero() {
             width: 100%;
             height: 100%;
             z-index: 0;
+            mix-blend-mode: normal;
           }
           @keyframes rotate1 {
             0% {
