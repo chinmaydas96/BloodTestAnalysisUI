@@ -3,11 +3,11 @@ import React from 'react';
 function Testimonials() {
   const testimonials = [
     {
-      text: "BloodTestAI helped me understand my lab results quickly. I was able to identify areas of concern and discuss them with my doctor.",
+      text: "BloodTest.ai helped me understand my lab results quickly. I was able to identify areas of concern and discuss them with my doctor.",
       author: "Sarah M., Patient"
     },
     {
-      text: "As a healthcare provider, I recommend BloodTestAI to my patients. It helps them understand their results and come prepared with informed questions.",
+      text: "As a healthcare provider, I recommend BloodTest.ai to my patients. It helps them understand their results and come prepared with informed questions.",
       author: "Dr. James Wilson, MD"
     },
     {
