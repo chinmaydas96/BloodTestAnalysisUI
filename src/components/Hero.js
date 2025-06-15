@@ -4,14 +4,13 @@ function Hero() {
   return (
     <section className="hero-section" id="home">
       <h1 className="hero-title">
-        Algorithm training infrastructure
+        Blood Test Analysis
       </h1>
       <p className="hero-subtitle">
-        At Valaam, we leverage the game-changing potency of Machine Learning to reshape understanding. 
-        Our ground-breaking tech opens unlimited potential across a range of sectors.
+      Upload your blood test results and get instant, accurate analysis powered by our advanced AI technology. Understand your health metrics with personalized insights and recommendations.
       </p>
       <div className="hero-buttons">
-        <a href="#analysis" className="cta-button">Remix Template</a>
+        <a href="#analysis" className="cta-button">Try it Now</a>
       </div>
     </section>
   );

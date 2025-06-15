@@ -51,11 +51,6 @@ function BloodTestAnalysis() {
   return (
     <section className="blood-test-section" id="analysis">
       <div className="blood-test-container">
-        <h2 className="section-title">Blood Test Analysis</h2>
-        <p className="section-subtitle">
-          Upload your blood test results and our AI will analyze them for you.
-        </p>
-        
         <form onSubmit={handleSubmit} className="upload-form">
           <div className="file-upload">
             <label htmlFor="blood-test-file" className="file-label">
