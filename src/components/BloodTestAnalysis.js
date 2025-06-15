@@ -4,7 +4,6 @@ function BloodTestAnalysis() {
   const [results, setResults] = useState(null);
   const [loading, setLoading] = useState(false);
   const [file, setFile] = useState(null);
-  const [requestInfo, setRequestInfo] = useState(null);
   const [error, setError] = useState(null);
 
   // Hardcoded API values
@@ -15,7 +14,6 @@ function BloodTestAnalysis() {
     if (e.target.files[0]) {
       setFile(e.target.files[0]);
       setResults(null);
-      setRequestInfo(null);
       setError(null);
     }
   };
@@ -27,7 +25,6 @@ function BloodTestAnalysis() {
     setLoading(true);
     setError(null);
     setResults(null);
-    setRequestInfo(null);
 
     try {
       const buf = await file.arrayBuffer();
@@ -47,13 +44,6 @@ function BloodTestAnalysis() {
       }
       
       const data = await response.json();
-      
-      // Set request info
-      setRequestInfo({
-        requestId: data.request_id,
-        fileType: data.file_type,
-        storage: data.storage
-      });
       
       // Set analysis results if available
       if (data.analysis) {
@@ -95,19 +85,6 @@ function BloodTestAnalysis() {
         </form>
 
         {loading && <div className="loading-indicator">⏳ Processing...</div>}
-
-        {requestInfo && (
-          <div className="request-info">
-            <h3>Request Information</h3>
-            <p><strong>Request ID:</strong> {requestInfo.requestId}</p>
-            <p><strong>File Type:</strong> {requestInfo.fileType}</p>
-            {requestInfo.storage && (
-              <p>
-                <strong>S3 Path:</strong> <code>{requestInfo.storage.bucket}/{requestInfo.storage.key}</code>
-              </p>
-            )}
-          </div>
-        )}
 
         {error && (
           <div className="error-message">
