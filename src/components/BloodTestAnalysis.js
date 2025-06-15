@@ -51,38 +51,27 @@ function BloodTestAnalysis() {
   return (
     <section className="blood-test-section" id="analysis">
       <div className="blood-test-container">
-        <div className="upload-intro">
-          <p className="upload-text">
-            Upload your blood test results and get instant, accurate analysis powered by 
-            our advanced AI technology. Understand your health metrics with 
-            personalized insights and recommendations.
-          </p>
-          <a href="#file-upload-area" className="cta-button try-now-button">Try it Now</a>
-        </div>
-        
-        <div className="file-upload-area" id="file-upload-area">
-          <form onSubmit={handleSubmit} className="upload-form">
-            <div className="file-upload">
-              <label htmlFor="blood-test-file" className="file-label">
-                {file ? file.name : 'Choose a file'}
-                <input 
-                  type="file" 
-                  id="blood-test-file" 
-                  accept=".pdf,.jpg,.jpeg,.png" 
-                  onChange={handleFileChange}
-                  className="file-input" 
-                />
-              </label>
-            </div>
-            <button 
-              type="submit" 
-              className="analysis-button" 
-              disabled={!file || loading}
-            >
-              {loading ? 'Analyzing...' : 'Analyze Results'}
-            </button>
-          </form>
-        </div>
+        <form onSubmit={handleSubmit} className="upload-form">
+          <div className="file-upload">
+            <label htmlFor="blood-test-file" className="file-label">
+              {file ? file.name : 'Choose a file'}
+              <input 
+                type="file" 
+                id="blood-test-file" 
+                accept=".pdf,.jpg,.jpeg,.png" 
+                onChange={handleFileChange}
+                className="file-input" 
+              />
+            </label>
+          </div>
+          <button 
+            type="submit" 
+            className="analysis-button" 
+            disabled={!file || loading}
+          >
+            {loading ? 'Analyzing...' : 'Analyze Results'}
+          </button>
+        </form>
 
         {results && (
           <div className="results-container">
