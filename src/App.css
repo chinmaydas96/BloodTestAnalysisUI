@@ -1133,6 +1133,6 @@ body[dir="rtl"] .lang-switch {
 
 /* color visibility */
 .lang-switch input:checked + .slider .ar { color:#fff; }
-.lang-switch input:checked + .slider .en { color:#000; }
+.lang-switch input:checked + .slider .en { color:#fff; }
 .lang-switch input:not(:checked) + .slider .en { color:#fff; }
 .lang-switch input:not(:checked) + .slider .ar { color:#000; } 
