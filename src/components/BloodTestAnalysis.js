@@ -32,14 +32,13 @@ function BloodTestAnalysis({ isArabic }) {
     try {
       const buf = await file.arrayBuffer();
       const language = isArabic ? "arabic" : "english";
-      const endpoint = `${API_URL}?analyze=true`;
+      const endpoint = `${API_URL}?analyze=true&language=${language}`;
       
       const response = await fetch(endpoint, {
         method: 'POST',
         headers: {
           'Content-Type': file.type,
           'x-api-key': API_KEY,
-          'Accept-Language': language
         },
         body: buf
       });
