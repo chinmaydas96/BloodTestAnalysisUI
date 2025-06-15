@@ -11,20 +11,21 @@ function Header({ isArabic, toggleLanguage }) {
         <h1 className="logo-text">bloodtest.AI</h1>
       </div>
 
-      {/* Language Switch */}
-      <div className="lang-switch" onClick={toggleLanguage}>
-        <input type="checkbox" checked={isArabic} readOnly />
-        <span className="slider" />
-        <span className="label en">EN</span>
-        <span className="label ar">ع</span>
-      </div>
-
       <button 
         className="menu-button" 
         onClick={() => setMenuOpen(!menuOpen)}
       >
         {t('Menu','القائمة')}
       </button>
+
+      {/* Language Switch */}
+      <div className="lang-switch" onClick={toggleLanguage}>
+        <input type="checkbox" checked={isArabic} readOnly />
+        <span className="slider">
+          <span className="lang en">EN</span>
+          <span className="lang ar">ع</span>
+        </span>
+      </div>
       
       {menuOpen && (
         <nav className="nav-menu">
