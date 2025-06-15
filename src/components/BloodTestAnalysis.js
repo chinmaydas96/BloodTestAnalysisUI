@@ -4,53 +4,74 @@ function BloodTestAnalysis() {
   const [results, setResults] = useState(null);
   const [loading, setLoading] = useState(false);
   const [file, setFile] = useState(null);
+  const [requestInfo, setRequestInfo] = useState(null);
+  const [error, setError] = useState(null);
+
+  // Hardcoded API values
+  const API_URL = "https://giqddf736l.execute-api.us-east-1.amazonaws.com/prod/process";
+  const API_KEY = "OF8QMOa2kG86DY0jz69ot2OvXZYUbGIM6pphMKB1";
 
   const handleFileChange = (e) => {
     if (e.target.files[0]) {
       setFile(e.target.files[0]);
+      setResults(null);
+      setRequestInfo(null);
+      setError(null);
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!file) return;
 
     setLoading(true);
-    // Simulate API call
-    setTimeout(() => {
-      setResults({
-        hemoglobin: {
-          value: 14.2,
-          status: 'normal',
-          reference: '13.5-17.5 g/dL',
-          description: 'Hemoglobin is within normal range, indicating good oxygen-carrying capacity.'
+    setError(null);
+    setResults(null);
+    setRequestInfo(null);
+
+    try {
+      const buf = await file.arrayBuffer();
+      const endpoint = `${API_URL}?analyze=true`;
+      
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': file.type,
+          'x-api-key': API_KEY
         },
-        whiteCellCount: {
-          value: 7.5,
-          status: 'normal',
-          reference: '4.5-11.0 10^3/μL',
-          description: 'White blood cell count is normal, suggesting a healthy immune system.'
-        },
-        platelets: {
-          value: 250,
-          status: 'normal',
-          reference: '150-450 10^3/μL',
-          description: 'Platelet count is normal, indicating proper blood clotting function.'
-        },
-        glucose: {
-          value: 105,
-          status: 'borderline',
-          reference: '70-99 mg/dL',
-          description: 'Glucose is slightly elevated. Consider following up with your healthcare provider.'
-        }
+        body: buf
       });
+      
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+      }
+      
+      const data = await response.json();
+      
+      // Set request info
+      setRequestInfo({
+        requestId: data.request_id,
+        fileType: data.file_type,
+        storage: data.storage
+      });
+      
+      // Set analysis results if available
+      if (data.analysis) {
+        setResults(data.analysis);
+      }
+    } catch (err) {
+      setError(err.message);
+    } finally {
       setLoading(false);
-    }, 2000);
+    }
   };
 
   return (
     <section className="blood-test-section" id="analysis">
       <div className="blood-test-container">
+        <h2>Document Analyzer</h2>
+        <p>Upload your blood test report for analysis</p>
+        
         <form onSubmit={handleSubmit} className="upload-form">
           <div className="file-upload">
             <label htmlFor="blood-test-file" className="file-label">
@@ -69,24 +90,36 @@ function BloodTestAnalysis() {
             className="analysis-button" 
             disabled={!file || loading}
           >
-            {loading ? 'Analyzing...' : 'Analyze Results'}
+            {loading ? 'Processing...' : 'Process Document'}
           </button>
         </form>
+
+        {loading && <div className="loading-indicator">⏳ Processing...</div>}
+
+        {requestInfo && (
+          <div className="request-info">
+            <h3>Request Information</h3>
+            <p><strong>Request ID:</strong> {requestInfo.requestId}</p>
+            <p><strong>File Type:</strong> {requestInfo.fileType}</p>
+            {requestInfo.storage && (
+              <p>
+                <strong>S3 Path:</strong> <code>{requestInfo.storage.bucket}/{requestInfo.storage.key}</code>
+              </p>
+            )}
+          </div>
+        )}
+
+        {error && (
+          <div className="error-message">
+            <h3>Error</h3>
+            <p>{error}</p>
+          </div>
+        )}
 
         {results && (
           <div className="results-container">
             <h3 className="results-title">Analysis Results</h3>
-            <div className="results-grid">
-              {Object.entries(results).map(([key, data]) => (
-                <div key={key} className={`result-card ${data.status}`}>
-                  <h4 className="result-name">{key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())}</h4>
-                  <div className="result-value">{data.value} <span className="result-unit">{data.reference.split(' ').pop()}</span></div>
-                  <div className="result-reference">Reference: {data.reference}</div>
-                  <div className="result-status">{data.status.toUpperCase()}</div>
-                  <p className="result-description">{data.description}</p>
-                </div>
-              ))}
-            </div>
+            <pre className="results-content">{results}</pre>
           </div>
         )}
       </div>

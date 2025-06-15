@@ -589,4 +589,68 @@
 
 .nav-link:hover {
   background-color: rgba(0, 0, 0, 0.05);
+}
+
+.loading-indicator {
+  margin: 20px auto;
+  font-size: 18px;
+  color: var(--token-7971df22-6c6f-4d4d-8825-e41e051e90ef);
+  text-align: center;
+}
+
+.request-info {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #f0f8ff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: left;
+}
+
+.request-info h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--token-32abb542-758d-4148-ab17-beace5424478);
+  margin-bottom: 15px;
+}
+
+.request-info p {
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+.request-info code {
+  background-color: #f5f5f5;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+.error-message {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #fff0f0;
+  border: 1px solid #ffcccc;
+  border-radius: 8px;
+  text-align: left;
+}
+
+.error-message h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #d32f2f;
+  margin-bottom: 10px;
+}
+
+.results-content {
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  padding: 15px;
+  white-space: pre-wrap;
+  overflow-x: auto;
+  font-family: monospace;
+  text-align: left;
+  max-height: 400px;
+  overflow-y: auto;
 } 
