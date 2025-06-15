@@ -6,7 +6,7 @@ function Header({ isArabic, toggleLanguage }) {
   const t = (en, ar) => (isArabic ? ar : en);
 
   return (
-    <header className="header">
+    <header className="header" lang={isArabic ? "arabic" : "english"}>
       <div className="logo-container">
         <h1 className="logo-text">bloodtest.AI</h1>
       </div>
