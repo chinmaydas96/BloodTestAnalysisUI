@@ -92,7 +92,6 @@ function BloodTestAnalysis() {
     <section className="blood-test-section" id="analysis">
       <div className="blood-test-container">
         <div className="analysis-intro">
-          <h2>Upload your blood test results and get instant, accurate analysis powered by our advanced AI technology. Understand your health metrics with personalized insights and recommendations.</h2>
           {!file && !results && (
             <button className="try-now-button" onClick={() => document.getElementById('blood-test-file').click()}>
               Try it Now

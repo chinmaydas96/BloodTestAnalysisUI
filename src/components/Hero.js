@@ -9,9 +9,6 @@ function Hero() {
       <p className="hero-subtitle">
       Upload your blood test results and get instant, accurate analysis powered by our advanced AI technology. Understand your health metrics with personalized insights and recommendations.
       </p>
-      <div className="hero-buttons">
-        <a href="#analysis" className="cta-button">Try it Now</a>
-      </div>
     </section>
   );
 }
