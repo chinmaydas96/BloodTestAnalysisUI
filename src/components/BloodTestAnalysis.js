@@ -31,7 +31,6 @@ function BloodTestAnalysis({ isArabic }) {
 
     try {
       const buf = await file.arrayBuffer();
-      // Add language parameter to the API request
       const language = isArabic ? "arabic" : "english";
       const endpoint = `${API_URL}?analyze=true`;
       
@@ -40,7 +39,7 @@ function BloodTestAnalysis({ isArabic }) {
         headers: {
           'Content-Type': file.type,
           'x-api-key': API_KEY,
-          'language': language // Also add language in headers
+          'Accept-Language': language
         },
         body: buf
       });
