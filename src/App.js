@@ -10,8 +10,10 @@ import Footer from './components/Footer';
 
 function App() {
   const [isArabic, setIsArabic] = useState(false);
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
 
   const toggleLanguage = () => setIsArabic(prev => !prev);
+  const toggleTheme = () => setIsDarkTheme(prev => !prev);
 
   // Apply dir and body class based on language
   useEffect(() => {
@@ -19,9 +21,19 @@ function App() {
     document.body.classList.toggle('arabic', isArabic);
   }, [isArabic]);
 
+  // Apply theme class
+  useEffect(() => {
+    document.body.classList.toggle('dark-theme', isDarkTheme);
+  }, [isDarkTheme]);
+
   return (
     <div className="App">
-      <Header isArabic={isArabic} toggleLanguage={toggleLanguage} />
+      <Header 
+        isArabic={isArabic} 
+        toggleLanguage={toggleLanguage}
+        isDarkTheme={isDarkTheme}
+        toggleTheme={toggleTheme}
+      />
       <main>
         <Hero isArabic={isArabic} />
         <BloodTestAnalysis isArabic={isArabic} />
