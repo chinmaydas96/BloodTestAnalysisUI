@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import ReactMarkdown from 'react-markdown';
 
 function BloodTestAnalysis({ isArabic }) {
@@ -6,6 +6,7 @@ function BloodTestAnalysis({ isArabic }) {
   const [loading, setLoading] = useState(false);
   const [file, setFile] = useState(null);
   const [error, setError] = useState(null);
+  const [isDragging, setIsDragging] = useState(false);
 
   const t = (en, ar) => isArabic ? ar : en;
 
@@ -20,6 +21,35 @@ function BloodTestAnalysis({ isArabic }) {
       setError(null);
     }
   };
+
+  const handleDragOver = useCallback((e) => {
+    e.preventDefault();
+    setIsDragging(true);
+  }, []);
+
+  const handleDragLeave = useCallback((e) => {
+    e.preventDefault();
+    setIsDragging(false);
+  }, []);
+
+  const handleDrop = useCallback((e) => {
+    e.preventDefault();
+    setIsDragging(false);
+    
+    const droppedFile = e.dataTransfer.files[0];
+    if (droppedFile) {
+      const fileType = droppedFile.type;
+      const acceptedTypes = ['application/pdf', 'image/jpeg', 'image/jpg', 'image/png'];
+      
+      if (acceptedTypes.includes(fileType)) {
+        setFile(droppedFile);
+        setResults(null);
+        setError(null);
+      } else {
+        setError(t('Please upload a valid file type (PDF, JPG, JPEG, or PNG)', 'يرجى تحميل نوع ملف صالح (PDF أو JPG أو JPEG أو PNG)'));
+      }
+    }
+  }, [t]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -68,9 +98,14 @@ function BloodTestAnalysis({ isArabic }) {
           <p className="analyzer-subtitle">{t('Upload your blood test report for analysis','قم بتحميل تقرير فحص الدم للتحليل')}</p>
           
           <form onSubmit={handleSubmit} className="upload-form">
-            <div className="file-upload">
+            <div 
+              className={`file-upload ${isDragging ? 'dragging' : ''}`}
+              onDragOver={handleDragOver}
+              onDragLeave={handleDragLeave}
+              onDrop={handleDrop}
+            >
               <label htmlFor="blood-test-file" className="file-label">
-                {file ? file.name : t('Choose a file','اختر ملفًا')}
+                {file ? file.name : t('Drag & drop or click to choose a file','اسحب وأفلت أو انقر لاختيار ملف')}
                 <input 
                   type="file" 
                   id="blood-test-file" 
@@ -89,11 +124,11 @@ function BloodTestAnalysis({ isArabic }) {
             </button>
           </form>
 
-          {loading && <div className="loading-indicator">⏳ Processing...</div>}
+          {loading && <div className="loading-indicator">{t('Processing...','جارٍ المعالجة...')}</div>}
 
           {error && (
             <div className="error-message">
-              <h3>Error</h3>
+              <h3>{t('Error','خطأ')}</h3>
               <p>{error}</p>
             </div>
           )}
@@ -101,8 +136,18 @@ function BloodTestAnalysis({ isArabic }) {
           {results && (
             <div className="results-container">
               <h3 className="results-title">{t('Analysis Results','نتائج التحليل')}</h3>
-              <div className="formatted-results markdown-body">
-                <ReactMarkdown>{results}</ReactMarkdown>
+              <div 
+                className={`formatted-results markdown-body ${isArabic ? 'arabic-content' : ''}`}
+                dir={isArabic ? 'rtl' : 'ltr'}
+              >
+                <ReactMarkdown
+                  components={{
+                    img: () => null,
+                    image: () => null
+                  }}
+                >
+                  {results}
+                </ReactMarkdown>
               </div>
             </div>
           )}
